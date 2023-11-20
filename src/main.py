@@ -13,6 +13,7 @@ from gates.Not16Gate import Not16Gate
 from gates.And16Gate import And16Gate
 from gates.Or16Gate import Or16Gate
 from gates.Or8WayGate import Or8WayGate
+from gates.AluGate import AluGate
 
 # nand = NandGate()
 # print(nand(True, True))
@@ -45,8 +46,7 @@ from gates.Or8WayGate import Or8WayGate
 # sum_result, carry_out = full_adder_gate(0, 1, 1)
 # print((int(sum_result), int(carry_out)))
 
-input_one = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
-input_two = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
 
 # inc16_gate = Inc16Gate()
 # res = inc16_gate(input_one)
@@ -56,15 +56,36 @@ input_two = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 # not16_gate = Not16Gate()
 # res = not16_gate(input_one)
 
-# and16_gate = And16Gate()
-# res = and16_gate(input_one, input_two)
+
 
 # or16_gate = Or16Gate()
 # res = or16_gate(input_one, input_two)
 # print(*(int(bit) for bit in res))
 
-input_one = [0, 0, 0, 1, 0, 0, 1, 0]
+# input_one = [0, 0, 0, 1, 0, 0, 1, 0]
 
-or8way_gate = Or8WayGate()
-res = or8way_gate(input_one)
-print(res)
+# or8way_gate = Or8WayGate()
+# res = or8way_gate(input_one)
+# print(res)
+
+input_one = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0]
+input_two = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1]
+
+alu_out, zr_out, ng_out = AluGate()(input_one, input_two, 0, 1, 0, 0, 1, 1)
+
+print(*(int(bit) for bit in alu_out))
+print('isnegative', ng_out)
+
+# add16_gate = Add16Gate()
+# res = add16_gate(input_one, input_two)
+
+# print(*(int(bit) for bit in res))
+
+# zx = 1
+# nx = 0
+
+# zx_out = Mux16Gate()(input_one, [0]*16, zx)
+# not_x = Not16Gate()(zx_out)
+# nx_out = Mux16Gate()(zx_out, not_x, nx)
+
+# print(*(int(bit) for bit in nx_out))
