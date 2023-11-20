@@ -9,6 +9,10 @@ from gates.HalfAdderGate import HalfAdderGate
 from gates.FullAdderGate import FullAdderGate
 from gates.Add16Gate import Add16Gate
 from gates.Inc16Gate import Inc16Gate
+from gates.Not16Gate import Not16Gate
+from gates.And16Gate import And16Gate
+from gates.Or16Gate import Or16Gate
+from gates.Or8WayGate import Or8WayGate
 
 # nand = NandGate()
 # print(nand(True, True))
@@ -33,20 +37,34 @@ from gates.Inc16Gate import Inc16Gate
 # input_b = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 # print (mux16_gate(input_a, input_b, True))
 
-half_adder_gate = HalfAdderGate()
-sum_result, carry_out = half_adder_gate(1, 1)
-print((int(sum_result), int(carry_out)))
+# half_adder_gate = HalfAdderGate()
+# sum_result, carry_out = half_adder_gate(1, 1)
+# print((int(sum_result), int(carry_out)))
 
-full_adder_gate = FullAdderGate()
-sum_result, carry_out = full_adder_gate(0, 1, 1)
-print((int(sum_result), int(carry_out)))
+# full_adder_gate = FullAdderGate()
+# sum_result, carry_out = full_adder_gate(0, 1, 1)
+# print((int(sum_result), int(carry_out)))
 
-input_one = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1]
-input_two = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+input_one = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+input_two = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
+# inc16_gate = Inc16Gate()
+# res = inc16_gate(input_one)
 
+# print(*(int(bit) for bit in res))
 
-inc16_gate = Inc16Gate()
-res = inc16_gate(input_one)
+# not16_gate = Not16Gate()
+# res = not16_gate(input_one)
 
-print(*(int(bit) for bit in res))
+# and16_gate = And16Gate()
+# res = and16_gate(input_one, input_two)
+
+# or16_gate = Or16Gate()
+# res = or16_gate(input_one, input_two)
+# print(*(int(bit) for bit in res))
+
+input_one = [0, 0, 0, 1, 0, 0, 1, 0]
+
+or8way_gate = Or8WayGate()
+res = or8way_gate(input_one)
+print(res)
