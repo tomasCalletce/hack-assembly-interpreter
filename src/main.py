@@ -16,6 +16,7 @@ from gates.Or8WayGate import Or8WayGate
 from gates.AluGate import AluGate
 from gates.BitGate import BitGate
 from gates.RegisterGate import RegisterGate
+from gates.PcGate import PcGate
 
 
 # nand = NandGate()
@@ -51,10 +52,6 @@ from gates.RegisterGate import RegisterGate
 
 
 
-# inc16_gate = Inc16Gate()
-# res = inc16_gate(input_one)
-
-# print(*(int(bit) for bit in res))
 
 # not16_gate = Not16Gate()
 # res = not16_gate(input_one)
@@ -97,9 +94,21 @@ input_two = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1]
 # bit_gate(1,0)
 # print(bit_gate(0,0))
 
-register_gate = RegisterGate()
-res = register_gate(input_one,1)
-res = register_gate(input_two,1)
+# register_gate = RegisterGate()
+# res = register_gate(input_one,1)
+# res = register_gate(input_two,1)
 
-print(*(int(bit) for bit in res))
+# print(*(int(bit) for bit in res))
 
+# pc_gate = PcGate()
+# pc_gate(input_one,0,1,0)
+# pc_gate(input_one,0,1,0)
+# res = pc_gate(input_one,0,0,1)
+# print(*(int(bit) for bit in res))
+
+
+
+# inc16_gate = Inc16Gate()
+# res = inc16_gate(input_one)
+
+# print(*(int(bit) for bit in res))
