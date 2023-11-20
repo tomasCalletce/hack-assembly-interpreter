@@ -14,6 +14,9 @@ from gates.And16Gate import And16Gate
 from gates.Or16Gate import Or16Gate
 from gates.Or8WayGate import Or8WayGate
 from gates.AluGate import AluGate
+from gates.BitGate import BitGate
+from gates.RegisterGate import RegisterGate
+
 
 # nand = NandGate()
 # print(nand(True, True))
@@ -71,10 +74,10 @@ from gates.AluGate import AluGate
 input_one = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0]
 input_two = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1]
 
-alu_out, zr_out, ng_out = AluGate()(input_one, input_two, 0, 1, 0, 0, 1, 1)
+# alu_out, zr_out, ng_out = AluGate()(input_one, input_two, 0, 1, 0, 0, 1, 1)
 
-print(*(int(bit) for bit in alu_out))
-print('isnegative', ng_out)
+# print(*(int(bit) for bit in alu_out))
+# print('isnegative', ng_out)
 
 # add16_gate = Add16Gate()
 # res = add16_gate(input_one, input_two)
@@ -89,3 +92,14 @@ print('isnegative', ng_out)
 # nx_out = Mux16Gate()(zx_out, not_x, nx)
 
 # print(*(int(bit) for bit in nx_out))
+
+# bit_gate = BitGate()
+# bit_gate(1,0)
+# print(bit_gate(0,0))
+
+register_gate = RegisterGate()
+res = register_gate(input_one,1)
+res = register_gate(input_two,1)
+
+print(*(int(bit) for bit in res))
+
