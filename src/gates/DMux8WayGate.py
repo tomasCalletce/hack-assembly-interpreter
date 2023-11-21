@@ -5,7 +5,6 @@ class DMux8WayGate:
         self.dmux_gate = DMuxGate()
 
     def __call__(self, input, select):
-        
         abcd, efgh = self.dmux_gate(input, select[0])
         ab,cd = self.dmux_gate(abcd, select[1])
         ef,gh = self.dmux_gate(efgh, select[1])

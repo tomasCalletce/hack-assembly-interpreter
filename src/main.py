@@ -22,6 +22,24 @@ from gates.Mux8Way16Gate import Mux8Way16Gate
 from gates.DMuxGate import DMuxGate
 from gates.DMux4WayGate import DMux4WayGate
 from gates.DMux8WayGate import DMux8WayGate
+from gates.Ram8Gate import Ram8Gate
+from gates.Ram64Gate import Ram64Gate
+
+
+# addres = [0,0,0]
+# load = 1
+# input_a = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1]
+
+# ram64_gate = Ram64Gate()
+# ram64_gate(input_a, 0, [0,0,0,0,0,0])
+# res = ram64_gate(input_a, 0, [0,0,0,0,0,0])
+# print(*(int(bit) for bit in res))
+
+# ram8_gate = Ram8Gate()
+# ram8_gate(input_a, 0, [0,0,1])
+# res = ram8_gate(input_a, 0, [0,0,1])
+# print(*(int(bit) for bit in res))
+
 
 #nand = NandGate()
 #print(nand(True, True))
@@ -56,9 +74,11 @@ mux4way16_gate = Mux4Way16Gate()
 res = mux4way16_gate(input_a,  input_b, input_c, input_d, [1,0])
 
 
-mux8way16_gate = Mux8Way16Gate()
-res = mux8way16_gate(input_a, input_b, input_c, input_d, input_e, input_f, input_g, input_h, [1,1,1])
-print(*(int(bit) for bit in res))
+
+
+# mux8way16_gate = Mux8Way16Gate()
+# res = mux8way16_gate(input_a, input_b, input_c, input_d, input_e, input_f, input_g, input_h, [1,1,1])
+# print(*(int(bit) for bit in res))
 #Mux8way16
 '''
 mux8way16_gate = Mux8Way16Gate()
