@@ -1,3 +1,6 @@
+from .Mux4Way16Gate import Mux4Way16Gate
+from .Mux16Gate import Mux16Gate
+
 class Mux8Way16Gate:
     def __init__(self):
         self.Mux4Way16_gate = Mux4Way16Gate()

@@ -7,7 +7,6 @@ class DMuxGate:
         self.not_gate = NotGate()
 
     def __call__(self, input, select):
-        # if select is 0 return a otherwise return b
         not_select = self.not_gate(select)
         out_a = self.and_gate(input, not_select)
         out_b = self.and_gate(select, input)

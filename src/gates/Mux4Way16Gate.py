@@ -1,6 +1,5 @@
 from .Mux16Gate import Mux16Gate
 
-
 class Mux4Way16Gate:
     def __init__(self):
         self.Mux16_gate = Mux16Gate()

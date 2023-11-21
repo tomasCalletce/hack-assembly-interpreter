@@ -49,12 +49,16 @@ input_d = [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1]
 input_e = [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1] 
 input_f = [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0]  
 input_g = [0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1] 
-input_h = [1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0]
+input_h = [1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1]
 #print (mux16_gate(input_a, input_b, False))
 
-#mux4way16_gate = Mux4Way16Gate()
-#print(mux4way16_gate(input_a,  input_b, input_c, input_d, [0,1]))
+mux4way16_gate = Mux4Way16Gate()
+res = mux4way16_gate(input_a,  input_b, input_c, input_d, [1,0])
 
+
+mux8way16_gate = Mux8Way16Gate()
+res = mux8way16_gate(input_a, input_b, input_c, input_d, input_e, input_f, input_g, input_h, [1,1,1])
+print(*(int(bit) for bit in res))
 #Mux8way16
 '''
 mux8way16_gate = Mux8Way16Gate()
@@ -170,3 +174,8 @@ test_dmux8way_gate()
 # res = inc16_gate(input_one)
 
 # print(*(int(bit) for bit in res))
+
+# mux_grande = Mux4Way16Gate()
+# res = mux_grande(1,1,1,0,[0,0])
+
+# print(int(res))
