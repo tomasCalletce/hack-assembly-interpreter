@@ -24,6 +24,12 @@ from gates.DMux4WayGate import DMux4WayGate
 from gates.DMux8WayGate import DMux8WayGate
 from gates.Ram8Gate import Ram8Gate
 from gates.Ram64Gate import Ram64Gate
+from loader import Loader
+
+load = Loader('programs/one.dhl')
+ram = load.get_ram64()
+
+
 
 
 # addres = [0,0,0]
@@ -31,8 +37,8 @@ from gates.Ram64Gate import Ram64Gate
 # input_a = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1]
 
 # ram64_gate = Ram64Gate()
-# ram64_gate(input_a, 0, [0,0,0,0,0,0])
-# res = ram64_gate(input_a, 0, [0,0,0,0,0,0])
+# ram64_gate(input_a, 1, [0,0,0,0,0,0])
+# res = ram64_gate(input_a, 0, [0,0,0,0,0,1])
 # print(*(int(bit) for bit in res))
 
 # ram8_gate = Ram8Gate()
