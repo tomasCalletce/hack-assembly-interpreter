@@ -24,10 +24,16 @@ from gates.DMux4WayGate import DMux4WayGate
 from gates.DMux8WayGate import DMux8WayGate
 from gates.Ram8Gate import Ram8Gate
 from gates.Ram64Gate import Ram64Gate
-from loader import Loader
+from Loader import Loader
+from Cpu import CPU
+
+
 
 load = Loader('programs/one.dhl')
+pc = PcGate()
 ram = load.get_ram64()
+cpu = CPU(ram)
+
 
 
 
