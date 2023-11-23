@@ -27,16 +27,19 @@ from gates.Ram64Gate import Ram64Gate
 from Loader import Loader
 from Cpu import CPU
 
-
-
 load = Loader('programs/one.dhl')
-pc = PcGate()
 ram = load.get_ram64()
-cpu = CPU(ram)
+res = ram([0]*16, 0, [0,0,0,0,0,0])
+print(*(int(bit) for bit in res))
 
+# inM = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+# instruction = [1,1,1,0,0,0,1,1,0,0,0,0,1,0,0,0]
+# reset = 0
 
+# cpu = CPU()
+# out,writeM,addressM,out_pc=cpu(inM,instruction,reset)
 
-
+# print(*(int(bit) for bit in out))
 
 # addres = [0,0,0]
 # load = 1
@@ -51,7 +54,6 @@ cpu = CPU(ram)
 # ram8_gate(input_a, 0, [0,0,1])
 # res = ram8_gate(input_a, 0, [0,0,1])
 # print(*(int(bit) for bit in res))
-
 
 #nand = NandGate()
 #print(nand(True, True))
@@ -72,21 +74,18 @@ cpu = CPU(ram)
 #print(mux_gate(True, False, False))
 
 #mux16_gate = Mux16Gate()
-input_a = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-input_b = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-input_c = [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-input_d = [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1]
-input_e = [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1] 
-input_f = [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0]  
-input_g = [0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1] 
-input_h = [1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1]
+# input_a = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+# input_b = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+# input_c = [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+# input_d = [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1]
+# input_e = [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1] 
+# input_f = [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0]  
+# input_g = [0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1] 
+# input_h = [1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1]
 #print (mux16_gate(input_a, input_b, False))
 
-mux4way16_gate = Mux4Way16Gate()
-res = mux4way16_gate(input_a,  input_b, input_c, input_d, [1,0])
-
-
-
+# mux4way16_gate = Mux4Way16Gate()
+# res = mux4way16_gate(input_a,  input_b, input_c, input_d, [1,0])
 
 # mux8way16_gate = Mux8Way16Gate()
 # res = mux8way16_gate(input_a, input_b, input_c, input_d, input_e, input_f, input_g, input_h, [1,1,1])

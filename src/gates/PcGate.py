@@ -12,7 +12,6 @@ class PcGate:
         value = self.register_gate(a,0)
 
         inc_out = self.inc16_gate(value)
-        print("inc_out", inc_out)
         inc_or_no_inc = self.mux16_gate(value, inc_out, inc)
         inc_or_no_inc_or_in = self.mux16_gate(inc_or_no_inc, a, load)
         inc_or_no_inc_or_in_or_reset = self.mux16_gate(inc_or_no_inc_or_in, [0]*16, reset)
